@@ -39,12 +39,12 @@ type OvfResource struct {
 
 	// SslCertificateValidation configuration for SSL Certificate validation of
 	// the URL specified by the Url.
-	SslCertificateValidation SslCertificateValidation `json:"ssl_certificate_validation"`
+	SslCertificateValidation SslCertificateValidation `json:"ssl_certificate_validation,omitempty"`
 
 	// Certificate that is to be trusted by vLCM when downloading the OVF
 	// package from a file server.
-	Certificate string `json:"cerficate"`
+	Certificate string `json:"cerficate,omitempty"`
 
 	// AuthenticationScheme is the authentication scheme needed to access the OVF URL.
-	AuthenticationScheme AuthenticationScheme `json:"authentication_scheme"`
+	AuthenticationScheme AuthenticationScheme `json:"authentication_scheme,omitempty"`
 }

@@ -212,7 +212,7 @@ type SolutionSpec struct {
 
 	// HookConfigurations keys represent LifecycleStates while the map values
 	// represent their configurations.
-	HookConfigurations map[LifecycleState]LifecycleHookConfig `json:"hook_configurations"`
+	HookConfigurations map[LifecycleState]LifecycleHookConfig `json:"hook_configurations,omitempty"`
 
 	// OvfResource is information about the OVF resource that to be used for
 	// the VM deployments.
@@ -223,10 +223,10 @@ type SolutionSpec struct {
 	//  include any white-space characters. The map keys represent the names of
 	//  properties while the map values represent the values of those
 	//  properties.
-	OvfDescriptorProperties map[string]string `json:"ovf_descriptor_properties"`
+	OvfDescriptorProperties map[string]string `json:"ovf_descriptor_properties,omitempty"`
 
 	// VmCloneConfig is the VM cloning configuration.
-	VmCloneConfig VmCloneConfig `json:"vm_clone_config"`
+	VmCloneConfig VmCloneConfig `json:"vm_clone_config,omitempty"`
 
 	// Storage policies to be configured on the VMs.
 	VmStoragePolicy StoragePolicy `json:"vm_storage_policy"`
@@ -235,20 +235,20 @@ type SolutionSpec struct {
 	// passed to vim.vm.ConfigSpec#vmProfile without any interpretation.
 	VmStorageProfiles []string `json:"vm_storage_profiles"`
 
-	VmDiskType DiskType `json:"vm_disk_type"`
+	VmDiskType DiskType `json:"vm_disk_type,omitempty"`
 
-	VmResourcePool string `json:"vm_resource_pool"`
+	VmResourcePool string `json:"vm_resource_pool,omitempty"`
 
-	VmFolder string `json:"vm_folder"`
+	VmFolder string `json:"vm_folder,omitempty"`
 
 	// VmResourceSpec is the VMs resource configuration.
 	//
 	// If unset the default resource configuration specified in the OVF
 	// descriptor is used.
-	VmResourceSpec VmResourceSpec `json:"vm_resource_spec"`
+	VmResourceSpec VmResourceSpec `json:"vm_resource_spec,omitempty"`
 
 	// Specifies System VMs redeployment policy.
-	RedeploymentPolicy RedeploymentPolicy `json:"redeployment_policy"`
+	RedeploymentPolicy RedeploymentPolicy `json:"redeployment_policy,omitempty"`
 }
 
 // Manager extends rest.Client, adding cluster related methods.
